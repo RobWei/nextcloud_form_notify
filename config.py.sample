@@ -1,0 +1,49 @@
+global_params = {
+            "nextcloud_url":"https://nextcloud.example.org/",
+            "nextcloud_user":"Anmeldung",
+            "nextcloud_password":"REDACTED",
+            "smtp_server_host": "SMTP.EXAMPLE.ORG:25",
+            "smtp_server_user": "USER@BLA.ORG",
+            "smtp_server_password": "REDACTED",
+            "mail_betreff": "Neue Sommerlager-Anmeldung {vorname} {nachname}",
+            "mail_betreff_eltern": "Eingangsbestätigung Sommerlager 2024 - {vorname} {nachname}",
+            "mail_from": "Sommerlager <sommerlager@bla.org>",
+            "pretty_ferienlager_name": "Sommerlager 2024",
+            "simple_ferienlager_name": "SOLA2024",
+            "form_id": "FORMID",
+            "form_field_kind_vorname_id": 0,
+            "form_field_kind_nachname_id": 0,
+            "form_field_kind_geburtstag_id": 0,
+            "form_field_kind_gruppename_id": 0,
+            "form_field_kind_notiz_id": 0,
+            "form_field_eltern_email_id": 0,
+            "dry_run": True
+        }
+
+
+message = """Gerade wurde eine neue Anmeldung für das Sommerlager eingereicht.
+Vorname: {vorname}
+Nachname: {nachname}
+Gruppe: {gruppenname}
+
+Notiz: {notiz}
+Zeitstempel: {timestamp}
+
+
+UID: {uid}
+"""
+
+message_eltern = """Hiermit bestätigen wir den Eingang Ihrer Online-Anmeldung.
+
+Vorname: {vorname}
+Nachname: {nachname}
+Gruppe: {gruppenname}
+
+Zeitstempel: {timestamp}
+
+
+
+Mit freundlichen Grüßen
+
+Das Sommerlager-Team
+"""
