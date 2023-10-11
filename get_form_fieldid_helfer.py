@@ -3,12 +3,10 @@ import json
 import sys
 import yaml
 
-global_params = {
-            "nextcloud_url":"https://nextcloud.blablabla.de/",
-            "nextcloud_user":"Anmeldung",
-            "nextcloud_password":"sfdjgskldfökglsdklfjhsdl",
-            "form_id": sys.argv[1]
-        }
+
+exec(open("{}/config.py".format(sys.path[0])).read())
+
+global_params["form_id"] = sys.argv[1]
 
 form = nextcloud_forms.nextcloud_form(nextcloud_url=global_params["nextcloud_url"], nextcloud_user=global_params["nextcloud_user"], nextcloud_password=global_params["nextcloud_password"])
 if global_params["form_id"] not in form.get_owned_forms_hash_list():
